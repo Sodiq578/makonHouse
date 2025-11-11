@@ -51,9 +51,23 @@ makonForm.addEventListener('submit', async (e) => {
     console.error(error);
   }
 });
+ 
 
-// Modal tashqarisiga bosganda yopish
-window.addEventListener('click', (e) => {
-  if (e.target === formModal) formModal.style.display = 'none';
-  if (e.target === successModal) successModal.style.display = 'none';
+
+
+
+
+
+
+
+
+
+// Modalni ochish
+openModal.addEventListener('click', () => {
+  formModal.classList.add('show');  // 'show' klassini qo'shish
+});
+
+// Modalni yopish
+closeModal.addEventListener('click', () => {
+  formModal.classList.remove('show'); // 'show' klassini olib tashlash
 });
