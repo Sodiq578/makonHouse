@@ -8,6 +8,7 @@
 body {
   background-image: url(./images/back.png);
     min-height: 100vh;
+    padding: 10px 0;
 }
 
 .container {
@@ -69,6 +70,12 @@ header {
     color: black;
     padding: 10px 20px ;
     border-radius: 10px;
+
+    padding: 20px 10px;
+      display: flex;
+    height: 23px;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
@@ -131,17 +138,16 @@ header {
 
 
 
-
 .title {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 26px; /* o'lchamni 22px ga o'zgartirdik */
+    font-weight: 400; /* Bebas Neue Regular uchun 400 yoki normal */
     text-align: center;
-    text-transform: uppercase; /* Barcha harflarni katta qiladi */
+    text-transform: uppercase; /* barcha harflar katta bo'ladi */
     margin-top: 20px;
-   color: #fff;
-   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    font-family: 'Bebas Neue', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 
 
 
@@ -223,6 +229,8 @@ header {
     margin-left: -46px;
     margin-top: -10px;
     z-index: 1  ;
+
+    
 }
 
 
@@ -234,12 +242,13 @@ header {
 
     
     .box-bottom{
-        gap: 18px;
+        
         display: flex;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 10px !important;
         line-height: 1.6;
         margin-top: 20px;
+        flex-direction: column;
     }
 
 
@@ -249,47 +258,51 @@ header {
     }
 
 
-    .btn {
-    /* Gradient fon */
-    background: linear-gradient(90deg, #294A95, #5086FF, #22418B);
+.btn {
+  /* Gradient fon - Figma bilan to'liq mos */
+  background: linear-gradient(90deg, 
+    #294A95 0%, 
+    #5086FF 46%, 
+    #22418B 100%
+  );
 
-    /* Matn rangi */
-    color: white;
+  /* Matn rangi */
+  color: white;
 
-    /* Padding (yuqoridan/pastdan va chapdan/o‘ngdan) */
-    padding: 10px 20px;
-    width: 300px;
-    height: 70px;
-    border-radius: 5px;
+  /* O'lchamlar */
+  width: 300px;
+  height: 70px;
+  padding: 10px 20px; /* bu kerak emas, chunki width/height bor */
 
-    /* Chekka radius (ixtiyoriy) */
-    border-radius: 5px;
+  /* Chekka radius */
+  border-radius: 5px;
+  border: none;
 
-    /* Chekka chiziqni olib tashlash */
-    border: none;
+  /* Kursor */
+  cursor: pointer;
 
-    /* Kursor o‘zgartirish */
-    cursor: pointer;
+  /* Matn uslubi */
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    /* Matnni markazlashtirish */
-    text-align: center;
+  /* Flex markazlashtirish */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    /* Matnni biroz qalinroq qilish */
-    font-weight: 600;
-     text-transform: uppercase; /* barcha matnlarni KATTA harf qiladi */
+  /* Hover effekti */
+  transition: all 0.3s ease;
 
-    /* O‘tkazish effekti hover uchun */
-    transition: background 0.3s ease;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -40px;
-    font-size: 18px;
-    z-index: 2342233 !important;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  /* Joylashuv */
+  margin: 20px auto; /* -40px o'rniga ijobiy margin */
+  position: relative;
+  top: -60px;
+  z-index: 234;
 }
+
 
 /* Hover effekti */
 .btn:hover {
@@ -312,10 +325,6 @@ header {
 
 
 
-.btn {
-    position: relative; /* yoki absolute, fixed, sticky */
-    z-index: 2342233;
-}
 
 
 
@@ -362,16 +371,17 @@ header {
 
 /* Modal oynasi */
 .modal-content {
-    background: linear-gradient(135deg, #294A95, #5086FF); /* gradient fon */
+    background: #ffffff; /* oq fon */
     padding: 30px 25px;
     border-radius: 20px; /* yumaloq burchaklar */
     max-width: 400px;
     width: 90%;
     text-align: center;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* qorong‘ulik effekt */
-    color: #fff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* yumshoq soyalar */
+    color: #333; /* matn rangi qora */
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Inputlar */
@@ -380,17 +390,25 @@ header {
     padding: 12px;
     margin: 12px 0;
     border-radius: 10px; /* yumaloq inputlar */
-    border: 2px solid rgba(255,255,255,0.5);
+    border: 2px solid #ccc; /* oq modal foniga mos rang */
     outline: none;
     font-size: 16px;
     transition: all 0.3s ease;
 }
 
-/* Input hover/focus effekti */
+/* Input fokus effekti */
 .modal-content input:focus {
-    border-color: #fff;
-    box-shadow: 0 0 8px rgba(255,255,255,0.6);
+    border-color: #294A95; /* fokusda rang o'zgaradi */
+    box-shadow: 0 0 5px rgba(41, 74, 149, 0.5);
 }
+
+
+/* Input hover/focus effekti oq modal uchun */
+.modal-content input:focus {
+    border-color: #294A95; /* ko‘k rang kontrast uchun */
+    box-shadow: 0 0 8px rgba(41, 74, 149, 0.5); /* yumshoq ko‘k soyalar */
+}
+
 
 /* Button */
 .modal-content button {
@@ -427,4 +445,149 @@ header {
 .close:hover {
     color: #ffd700; /* sariq rang hover effekti */
     transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+.logo-img{
+    width: 80px;
+    height: 30px !important;
+
+}
+
+
+
+.car{
+    width: 110px;
+}
+
+
+
+
+
+
+.bottom-text-text {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* info  */
+
+.info-box{
+    border: 1px solid #fff;
+}
+
+
+
+
+
+
+/* INFO bo‘lim umumiy sozlamalari */
+.info {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto; /* markazga joylashtirish */
+  padding: 40px 20px;
+   
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Sarlavha */
+.info h3 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Har bir quti */
+.info-box {
+  background: rgba(255, 255, 255, 0.1); /* yarim shaffof fon */
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effekti */
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Kirish animatsiyasi (fade-in) */
+.info-box {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.info-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.info-box:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive dizayn */
+@media (max-width: 480px) {
+  .info {
+    padding: 25px 15px;
+  }
+  .info h3 {
+    font-size: 1.8rem;
+  }
+  .info-box {
+    padding: 18px;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+.title-span{
+    background-color: #5086FF;
+    border-radius: 5px;
 }
